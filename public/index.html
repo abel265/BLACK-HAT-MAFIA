@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>K Chat</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>K</text></svg>" />
+</head>
+<body>
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen" class="screen">
+    <div class="login-card">
+      <div class="logo">K</div>
+      <h1>K Chat</h1>
+      <p class="subtitle">Anonymous messaging platform</p>
+      <form id="login-form">
+        <input type="text" id="login-username" placeholder="Username" required autocomplete="username" />
+        <input type="password" id="login-password" placeholder="Password" required autocomplete="current-password" />
+        <button type="submit">Enter</button>
+      </form>
+      <p id="login-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- CHAT SCREEN -->
+  <div id="chat-screen" class="screen hidden">
+    <header class="chat-header">
+      <div class="header-left">
+        <div class="logo-small">K</div>
+        <span>K Chat</span>
+      </div>
+      <div class="header-right">
+        <button id="admin-btn" class="icon-btn hidden" title="Admin Panel">⚙</button>
+        <button id="logout-btn" class="icon-btn" title="Logout">⎋</button>
+      </div>
+    </header>
+
+    <div id="messages" class="messages"></div>
+
+    <div id="reply-preview" class="reply-preview hidden">
+      <div class="reply-preview-content">
+        <span class="reply-label">Replying to</span>
+        <span id="reply-text"></span>
+      </div>
+      <button id="cancel-reply" class="icon-btn">✕</button>
+    </div>
+
+    <form id="message-form" class="message-form">
+      <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
+      <button type="submit" id="send-btn">➤</button>
+    </form>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div id="admin-screen" class="screen hidden">
+    <header class="chat-header">
+      <div class="header-left">
+        <button id="back-to-chat" class="icon-btn">←</button>
+        <span>Admin Panel</span>
+      </div>
+    </header>
+
+    <div class="admin-content">
+      <section class="admin-section">
+        <h2>Create New Account</h2>
+        <form id="create-user-form" class="admin-form">
+          <input type="text" id="new-username" placeholder="Username" required />
+          <input type="password" id="new-password" placeholder="Password" required />
+          <button type="submit">Create Account</button>
+        </form>
+        <p id="create-msg" class="msg"></p>
+      </section>
+
+      <section class="admin-section">
+        <h2>Manage Users</h2>
+        <div id="users-list"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

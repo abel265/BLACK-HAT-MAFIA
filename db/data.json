@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "$2a$10$tOLxJ06tx5szGTpAIlQyeeYATZW9mS.3z15O8IRMEYka/k2o7K.8y",
+      "is_admin": true,
+      "created_at": "2026-10-19T16:11:20.443Z"
+    }
+  ],
+  "messages": [],
+  "nextUserId": 2,
+  "nextMessageId": 1
+}

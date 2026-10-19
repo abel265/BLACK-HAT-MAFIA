@@ -1,0 +1,15 @@
+{
+  "name": "k-chat",
+  "version": "1.0.0",
+  "description": "Anonymous chat platform with admin-managed accounts - K style",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.0",
+    "socket.io": "^4.8.0"
+  }
+}
